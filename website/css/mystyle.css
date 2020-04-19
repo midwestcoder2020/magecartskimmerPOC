@@ -1,0 +1,30 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+
+}
+
+.mainSection{
+  margin-left: auto;
+  text-align: center;
+}
+
+.mainSection .orderDetailSection{
+  display: inline-flex;
+}
+
+.mainSection .orderDetailSection .orderNum{
+   vertical-align: middle;
+    display: inline-block;
+    margin: auto;
+    padding:20px;
+}
+
+
+.backImage{
+  background-image: url('../images/checkout.jpg');
+  background-size: auto;
+}

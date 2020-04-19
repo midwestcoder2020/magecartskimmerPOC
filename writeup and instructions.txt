@@ -1,0 +1,88 @@
+E-Skimmer Proof of Concept Javascript Library edition
+
+Inspired by @DarknetDiaries / @JackRhysider
+
+This proof of  concept was adapted and implemented following the account described in The DarknetDiaries Podcase
+episoe #52 / EP 52: MAGECART from 26 November 2019 | 48:05
+
+The synopsis of the episode is detailed as:
+
+Credit card skimming is growing in popularity. Gas pumps all over are seeing skimmers attached to them.
+It’s growing in popularity because it’s really effective. 
+Hackers have noticed how effective it is and have began skimming credit cards from websites.
+
+The skimmer the hackers were found to have used were e-skimmers, or skimming malicious code embedded in webpages.
+This code would skimm the card data from transacions and make it available for the hackers on the other side of the internet.
+
+
+Point of inspiration. During this podcast, Jack suggests attackers attacked CDN or Content Delivery Networks lbiraries 
+such as the Jquery, Bootstrap, Angular, and other libraries that could be deliverd through cloud services
+The cloud would look similar to this : https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+
+The podcast further continued if the source were compromised, all web applications which imported and sue this code would
+be vulnerable to the malicious code entered in the origin. This is also due to a key aspect of this attack. The code used to skimm
+is added to the source and does not replace the original. It simply "piggy backs" of of it.
+
+The code sample provided performs a simple task. Using vanilla javascript, malicious vanilla javascript is planted in the jquery library (Jquery is scripted given it popularity in websites).
+The stand alone vanilla Javascript however, given it's pure form can be implemented in any platform where javascript can be ran.
+The code listen for the page to enter it's submission state and performs 5 simple steps.
+
+The normal functionality of this sample check out page is:
+
+1. gets user input
+
+2. submits data to  notional "server"
+
+3. redirects user to confirmation page upoon completion.
+
+Malware functionality is:
+
+1. waits for page running code to enter submission state from form submission (ie checkout)
+
+2. finds all the forms on that page
+
+3. iterates though all the fields in the all the forms
+
+4. scrapes all the data from the forms in to one variable
+
+5. makes a http request request and sends the data in the reqeust using built in methods to the CC included in files
+
+NOTE the above steps were created in pure Vanilla Javascript in demonstration purposes.
+A key component of this malicious code is it's simplicity in that it is accomplished in approximately 15 lines of code
+
+Steps to use (no server needed)
+
+1. Place all file into one directory. 
+
+2. visitin index page
+
+3. Fill out forms as if you were checking out
+
+4. Check out
+
+5. Investigate
+
+Steps to use (with  simple python server)
+
+go into ccserver folder
+
+1. setup python (3.6) 
+
+2. install depencies for environment with "pip install -r reqs.txt"
+
+
+go into website directory
+
+1. visitin index page
+
+2. Fill out forms as if you were checking out
+
+3. Check out
+
+4. Investigate
+
+
+Educational Beneits
+
+Host-based signatures - depending how on how the malcious javascript is 
+implemented and the Content Delivery Network compromised, host artifacts can be affected 
