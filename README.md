@@ -38,3 +38,6 @@ Educational Beneits
 
 Host-based signatures - depending how on how the malcious javascript is 
 implemented and the Content Delivery Network compromised, host artifacts can be affected 
+
+
+![pocpic]('eskimmerpoc.png')
